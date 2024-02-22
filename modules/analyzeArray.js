@@ -1,4 +1,4 @@
-export default function analyzeArray(array) {
+function analyzeArray(array) {
   const object = {
     average: average(array),
     min: min(array),
@@ -7,7 +7,9 @@ export default function analyzeArray(array) {
   };
 
   function average(array) {
-    return array.reduce((total, num) => total + num, 0) / array.length;
+    return Math.floor(
+      array.reduce((total, num) => total + num, 0) / array.length
+    );
   }
   function min(array) {
     let sorted = array.sort((a, b) => {
@@ -26,3 +28,5 @@ export default function analyzeArray(array) {
   }
   return object;
 }
+
+console.log(analyzeArray([1, 8, 3, 4, 2, 6]));
